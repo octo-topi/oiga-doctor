@@ -1,0 +1,31 @@
+{
+  "name": "oiga-doctor",
+  "private": false,
+  "description": "Tell me where your architecture hurts",
+  "engines": {
+    "node": "15.10.0",
+    "npm": "7.5.3"
+  },
+  "scripts": {
+    "test": "npm run lint:markdown && npm run lint:markdown:links",
+    "lint:markdown:links": "find .  -path ./node_modules -prune -false -o -name \"*.md\" | xargs -L1 markdown-link-check --quiet --config ./configuration/link-check.json",
+    "lint:markdown": "node ./node_modules/markdownlint-cli --config=./configuration/markdownlint.json '**/*.md' --ignore node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octo-topi/oiga-doctor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/octo-topi/oiga-doctor/issues"
+  },
+  "homepage": "https://github.com/octo-topi/oiga-doctor#readme",
+  "dependencies": {
+    "check-engine": "^1.10.0",
+    "markdown-link-check": "^3.8.6",
+    "markdown-lint": "0.0.4",
+    "markdownlint-cli": "^0.26.0"
+  }
+}

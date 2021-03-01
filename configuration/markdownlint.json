@@ -1,0 +1,6 @@
+// https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md
+{
+  "default": true,
+  "MD013": { "line_length": 200 },
+  "MD032": false
+}
