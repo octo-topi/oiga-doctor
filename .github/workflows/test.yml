@@ -1,4 +1,4 @@
-name: Test
+name: Test root
 
 on:
   push:
@@ -10,22 +10,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-test:
+
+  test-root:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access i
-      - uses: actions/checkout@v2
+      - name: checkout repository (shallow)
+        uses: actions/checkout@v2
 
-      - name: Install Node.js
+      - name: install Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '15.x'
 
-      - name: Install Node.js
+      - name: install dependencies
         run: npm ci
 
       - name: lint
         run: npm run lint-docs
+
