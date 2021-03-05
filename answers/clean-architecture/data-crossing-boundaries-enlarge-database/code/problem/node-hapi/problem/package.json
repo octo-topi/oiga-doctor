@@ -1,0 +1,52 @@
+{
+  "name": "problem",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "15.10.0",
+    "npm": "7.5.3"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run start:server",
+    "start:server": "node server.js",
+    "database:initialize": "node database/initialize.js",
+    "database:seed": "node database/seed.js",
+    "local:database:start": "docker-compose --file ./database/docker-compose.yml up --detach && npm run database:initialize",
+    "local:database:stop": "docker-compose --file ./database/docker-compose.yml stop",
+    "local:database:cli": " psql postgresql://postgres@localhost/oiga_doctor",
+    "local:sample:create-car": "curl --silent --header \"Content-Type: application/json\" --request POST --data '{\"color\":\"yellow\"}' http://localhost:3000/car | jq -r",
+    "local:sample:read-car": "curl --silent http://localhost:3000/car/1 | jq -r",
+    "local:sample:read-vehicle": "curl --silent http://localhost:3000/vehicle/1 | jq -r",
+    "local:start": "npm run local:database:start && npm run start:server",
+    "test": "npm run test:lint && npm run database:initialize && npm run test:run",
+    "test:run": "mocha --exit --recursive tests",
+    "test:lint": "npm run lint",
+    "lint": "eslint .",
+    "lint:fix": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^9.1.2",
+    "@hapi/hapi": "^20.1.1",
+    "bookshelf": "^1.2.0",
+    "joi": "^17.4.0",
+    "knex": "^0.21.0",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "check-engine": "^1.10.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-chai-expect": "^2.2.0",
+    "eslint-plugin-mocha": "^8.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "http-status-codes": "^2.1.4",
+    "mocha": "^8.3.2",
+    "prettier": "^2.2.1"
+  }
+}
