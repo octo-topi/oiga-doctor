@@ -7,9 +7,9 @@
     "npm": "7.5.3"
   },
   "scripts": {
-    "test": "npm run lint:markdown && npm run lint:markdown:links",
-    "lint:markdown:links": "find .  -path ./node_modules -prune -false -o -name \"*.md\" | xargs -L1 markdown-link-check --quiet --config ./configuration/link-check.json",
-    "lint:markdown": "node ./node_modules/markdownlint-cli --config=./configuration/markdownlint.json '**/*.md' --ignore node_modules"
+    "lint-docs": "npm run lint-docs:markdown && npm run lint-docs:markdown:links",
+    "lint-docs:markdown:links": "find .  -path ./node_modules -prune -false -o -name \"*.md\" | xargs -L1 markdown-link-check --quiet --config ./configuration/link-check.json",
+    "lint-docs:markdown": "node ./node_modules/markdownlint-cli --config=./configuration/markdownlint.json '**/*.md' --ignore node_modules"
   },
   "repository": {
     "type": "git",
