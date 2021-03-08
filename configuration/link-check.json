@@ -1,7 +1,7 @@
 {
   "ignorePatterns": [
     {
-      "pattern": "^https://martinfowler.com/"
+      "pattern": "^https://www.manning.com/books/unit-testing"
     }
   ]
 }
