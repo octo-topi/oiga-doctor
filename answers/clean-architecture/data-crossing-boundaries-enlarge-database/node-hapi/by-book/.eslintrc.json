@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended",
+    "plugin:chai-expect/recommended",
+    "plugin:mocha/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "plugins": [
+    "chai-expect",
+    "prettier",
+    "mocha"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-warning-comments": "warn"
+  }
+}
