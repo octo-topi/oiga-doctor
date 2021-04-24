@@ -1,5 +1,8 @@
 ############ IntelliJ ############
  .idea/*
+ .idea/
+ .idea
+ *.iml
 
 ############  VSCode ############
 .vscode/*
@@ -17,7 +20,8 @@ lerna-debug.log*
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Runtime data
-pids
+pidsgup
+
 *.pid
 *.seed
 *.pid.lock
